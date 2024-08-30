@@ -1,26 +1,29 @@
-const router = require('express').Router();
-const { User, Post } = require('../models');
+const router = require("express").Router();
+const { User, Post } = require("../models");
 
-router.get('/', async (req, res) => {
+// render homepage
+router.get("/", async (req, res) => {
   try {
     const postData = await Post.findAll();
 
-    res.render('homepage');
+    res.render("homepage");
   } catch (err) {
     res.status(500).json(err);
   }
 });
 
-router.get('/', async (req, res) => {
+router.get("/", async (req, res) => {});
 
+router.get("/", async (req, res) => {});
+
+// render login page
+router.get("/login", (req, res) => {
+  res.render("login");
 });
 
-router.get('/', async (req, res) => {
-
-});
-
-router.get('/', async (req, res) => {
-
+// render signup page
+router.get("/signup", async (req, res) => {
+  res.render("signup");
 });
 
 module.exports = router;

@@ -2,6 +2,7 @@ const router = require("express").Router();
 const { Post } = require("../../models");
 const authorization = require("../../utils/authorization");
 
+// creates a post
 router.post("/", async (req, res) => {
   try {
     const newPost = await Post.create({
@@ -15,6 +16,7 @@ router.post("/", async (req, res) => {
   }
 });
 
+// deletes a post
 router.delete("/:id", async (req, res) => {
   try {
     const postData = await Post.destroy({
