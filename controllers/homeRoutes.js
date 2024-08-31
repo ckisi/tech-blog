@@ -16,6 +16,11 @@ router.get("/", async (req, res) => {});
 
 router.get("/", async (req, res) => {});
 
+// render dashboard page
+router.get("/dashboard", (req, res) => {
+  res.render("dashboard");
+});
+
 // render login page
 router.get("/login", (req, res) => {
   res.render("login");
