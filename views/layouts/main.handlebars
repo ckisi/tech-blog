@@ -34,7 +34,7 @@
               <a
                 class="nav-link active"
                 aria-current="page"
-                href="/homepage"
+                href="/"
               >Home</a>
               <a class="nav-link" href="/dashboard">Dashboard</a>
               <button
@@ -45,10 +45,9 @@
               <a
                 class="nav-link active"
                 aria-current="page"
-                href="/homepage"
+                href="/"
               >Home</a>
-              <!-- TODO: change to /login later when session bug is fixed -->
-              <a class="nav-link" href="/dashboard">Dashboard</a>
+              <a class="nav-link" href="/login">Dashboard</a>
               <a class="nav-link" href="/login">Login</a>
             {{/if}}
           </div>
@@ -73,5 +72,8 @@
       crossorigin="anonymous"
     ></script>
     <script src="./js/script.js"></script>
+    {{#if logged_in}}
+    <script src ="./js/logout.js"></script>
+    {{/if}}
   </body>
 </html>

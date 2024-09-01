@@ -25,15 +25,8 @@ router.get("/", async (req, res) => {
   }
 });
 
-router.get("/", async (req, res) => {});
-
-router.get("/", async (req, res) => {});
-
 // render dashboard page
 router.get("/dashboard", (req, res) => {
-  if (req.session.logged_in) {
-    console.log(req.session.logged_in);
-  }
   res.render("dashboard", { logged_in: req.session.logged_in });
 });
 
