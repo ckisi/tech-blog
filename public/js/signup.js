@@ -14,7 +14,7 @@ const signupHandler = async (event) => {
 
     if (response.ok) {
       // relocate user to homepage
-      document.location.replace('/dashboard');
+      document.location.replace("/dashboard");
     } else {
       alert(response.statusText);
     }

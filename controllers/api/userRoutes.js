@@ -5,11 +5,14 @@ const { User } = require("../../models");
 router.post("/", async (req, res) => {
   try {
     const userData = await User.create(req.body);
+    console.log("user created");
+    req.session.user_id = userData.id;
+    req.session.logged_in = true;
     req.session.save(() => {
-      req.session.user_id = userData.id;
-      req.session.logged_in = true;
+      console.log("session made", userData.id);
       res.status(200).json(userData);
     });
+    console.log("session variable:", req.session);
   } catch (err) {
     res.status(400).json(err);
   }
@@ -18,7 +21,9 @@ router.post("/", async (req, res) => {
 // user login
 router.post("/login", async (req, res) => {
   try {
-    const userData = await User.findOne({ where: { username: req.body.username } });
+    const userData = await User.findOne({
+      where: { username: req.body.username },
+    });
 
     if (!userData) {
       res
@@ -57,13 +62,24 @@ router.post("/logout", (req, res) => {
   }
 });
 
-router.get('/', async (req, res) => {
+router.get("/", async (req, res) => {
   try {
     const userData = await User.findAll();
     res.status(200).json(userData);
   } catch (err) {
     res.status(400).json(err);
   }
+});
+
+// DEBUGGING REMOVE LATER: checks sessions variables
+router.get("/check-session", (req, res) => {
+  // Access the session variables
+  // Log the session variables to the console
+  console.log("User ID:", req.session.user_id);
+  console.log("Is Logged In:", req.session.logged_in);
+
+  // Send a response
+  res.send("Session variables checked. Please check the console for output.");
 });
 
 module.exports = router;
