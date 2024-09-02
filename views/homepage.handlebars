@@ -5,8 +5,8 @@
         <div class="card-body">
           <h2 class="card-title">{{post.title}}</h2>
           <div class="card-subtitle text-muted mb-2">
-            <span class="post-author">Author Name</span>
-            <span class="post-date">Date</span>
+            <span class="post-author">{{user.username}}</span>
+            <span class="post-date">{{post.date_created}}</span>
           </div>
           <p class="card-text">{{post.content}}</p>
         </div>
