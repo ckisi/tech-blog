@@ -1,3 +1,20 @@
-<div>
-
+<button
+  class="btn btn-primary"
+  data-bs-toggle="collapse"
+  data-bs-target="#formCollapse"
+>Toggle Form</button>
+<div id="formCollapse" class="collapse">
+  <form class="postForm">
+    <div class="mb-3">
+      <label for="titleBox" class="form-label">Post Title</label>
+      <input type="text" class="form-control" id="titleBox" />
+    </div>
+    <div class="mb-3">
+      <label for="contentBox" class="form-label">Content</label>
+      <textarea class="form-control" id="contentBox" rows="3"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary" id="postBtn">Post</button>
+  </form>
 </div>
+
+<script src="./js/createPost.js"></script>

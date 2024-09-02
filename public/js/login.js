@@ -1,10 +1,13 @@
 // login the user
 const loginHandler = async (event) => {
+  // prevent refresh
   event.preventDefault();
 
+  // grab and trim user inputs
   const username = document.querySelector("#loginUsername").value.trim();
   const password = document.querySelector("#loginPassword").value.trim();
 
+  // make POST request to login
   if (username && password) {
     const response = await fetch("api/users/login", {
       method: "POST",
