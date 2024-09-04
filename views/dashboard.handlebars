@@ -1,7 +1,36 @@
+<div id="formCollapse" class="collapse">
+  <form class="postForm">
+    <div class="mb-3">
+      <label for="titleBox" class="form-label">Post Title</label>
+      <input type="text" class="form-control" id="titleBox" />
+    </div>
+    <div class="mb-3">
+      <label for="contentBox" class="form-label">Content</label>
+      <textarea class="form-control" id="contentBox" rows="3"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary" id="postBtn">Post</button>
+  </form>
+</div>
+
+<div id="updateFormCollapse" class="collapse">
+  <form class="updateForm">
+    <div class="mb-3">
+      <label for="titleBox" class="form-label">Post Title</label>
+      <input type="text" class="form-control" id="updateTitle" />
+    </div>
+    <div class="mb-3">
+      <label for="contentBox" class="form-label">Content</label>
+      <textarea class="form-control" id="updateContent" rows="3"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary" id="updateBtn">Update</button>
+    <button class="btn btn-danger" id="deleteBtn">Delete</button>
+  </form>
+</div>
+
 {{#each posts as |post|}}
-<div class="row">
+  <div class="row">
     <div class="col-md-12">
-      <div class="card">
+      <div class="card post" data-post-id="{{post.id}}">
         <div class="card-body">
           <h2 class="card-title">{{post.title}}</h2>
           <div class="card-subtitle text-muted mb-2">
@@ -19,19 +48,6 @@
   class="btn btn-primary"
   data-bs-toggle="collapse"
   data-bs-target="#formCollapse"
->Toggle Form</button>
-<div id="formCollapse" class="collapse">
-  <form class="postForm">
-    <div class="mb-3">
-      <label for="titleBox" class="form-label">Post Title</label>
-      <input type="text" class="form-control" id="titleBox" />
-    </div>
-    <div class="mb-3">
-      <label for="contentBox" class="form-label">Content</label>
-      <textarea class="form-control" id="contentBox" rows="3"></textarea>
-    </div>
-    <button type="submit" class="btn btn-primary" id="postBtn">Post</button>
-  </form>
-</div>
+>+ New Post</button>
 
-<script src="./js/createPost.js"></script>
+<script src="./js/dashboard.js"></script>

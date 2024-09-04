@@ -4,8 +4,8 @@ const loginHandler = async (event) => {
   event.preventDefault();
 
   // grab and trim user inputs
-  const username = document.querySelector("#loginUsername").value.trim();
-  const password = document.querySelector("#loginPassword").value.trim();
+  const username = $("#loginUsername").val().trim();
+  const password = $("#loginPassword").val().trim();
 
   // make POST request to login
   if (username && password) {
@@ -26,4 +26,4 @@ const loginHandler = async (event) => {
 };
 
 // event listener for login button
-document.querySelector(".login-form").addEventListener("submit", loginHandler);
+$(".login-form").on("submit", loginHandler);

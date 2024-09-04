@@ -2,8 +2,8 @@
 const signupHandler = async (event) => {
   event.preventDefault();
 
-  const username = document.querySelector("#createUsername").value.trim();
-  const password = document.querySelector("#createPassword").value.trim();
+  const username = $("#createUsername").val().trim();
+  const password = $("#createPassword").val().trim();
 
   if (username && password) {
     const response = await fetch("api/users", {
@@ -22,6 +22,4 @@ const signupHandler = async (event) => {
 };
 
 // event listener for sign up button
-document
-  .querySelector(".signup-form")
-  .addEventListener("submit", signupHandler);
+$(".signup-form").on("submit", signupHandler);
