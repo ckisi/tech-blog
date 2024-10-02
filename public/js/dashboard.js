@@ -19,6 +19,8 @@ const createPost = async () => {
     } else {
       alert(response.statusText);
     }
+  } else {
+    alert("Please fill out all of the fields");
   }
 };
 
@@ -39,10 +41,23 @@ const updatePost = async (postId) => {
     } else {
       alert(response.statusText);
     }
+  } else {
+    alert("Please fill out all of the fields")
   }
 };
 
 // TODO: delete a post
+const deletePost = async (postId) => {
+  const response = await fetch(`api/posts/${postId}`, {
+    method: "DELETE",
+  });
+
+  if (response.ok) {
+    location.reload();
+  } else {
+    alert("Failed to delete post");
+  }
+};
 
 $(function () {
   // triggers when the "post" button is clicked, submitting the form
@@ -62,8 +77,15 @@ $(function () {
     $(".updateForm").data("post-id", postId);
   });
 
+  // updates post when the update button is clicked
   $(".updateForm").on("submit", function () {
     const postId = $(".updateForm").data("post-id");
     updatePost(postId);
+  });
+
+  // delete post when delete button is clicked
+  $("#deleteBtn").on("click", function () {
+    const postId = $(".updateForm").data("post-id");
+    deletePost(postId);
   });
 });

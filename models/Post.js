@@ -1,3 +1,5 @@
+// Post model for posts created by users
+
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
 

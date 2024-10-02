@@ -20,8 +20,10 @@ const loginHandler = async (event) => {
       // relocate to homepage
       document.location.replace('/dashboard');
     } else {
-      alert(response.statusText);
+      alert("Username or password incorrect");
     }
+  } else {
+    alert("Please enter username and password")
   }
 };
 
