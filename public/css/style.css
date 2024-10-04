@@ -1,6 +1,6 @@
 :root {
-  --mint-green: #B2FFB2;
-  --dark-brown: #3B2A2A;
+  --mint-green: #b2ffb2;
+  --dark-brown: #3b2a2a;
 }
 
 body {
@@ -26,4 +26,9 @@ body {
 
 .bg-brown {
   background-color: var(--dark-brown);
+}
+
+.btn-color {
+  background-color: grey;
+  color: white;
 }

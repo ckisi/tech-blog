@@ -34,21 +34,18 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-          <div class="navbar-nav">
+          <div class="navbar-nav fs-5">
             {{#if logged_in}}
               <a
-                class="nav-link active navbar-text"
+                class="nav-link navbar-text"
                 aria-current="page"
                 href="/"
               >Home</a>
               <a class="nav-link navbar-text" href="/dashboard">Dashboard</a>
-              <button
-                class="no-button border-white navbar-text"
-                id="logoutBtn"
-              >Logout</button>
+              <a class="nav-link navbar-text" id="logoutBtn">Logout</a>
             {{else}}
               <a
-                class="nav-link active navbar-text"
+                class="nav-link navbar-text"
                 aria-current="page"
                 href="/"
               >Home</a>
