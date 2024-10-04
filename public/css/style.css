@@ -1,0 +1,29 @@
+:root {
+  --mint-green: #B2FFB2;
+  --dark-brown: #3B2A2A;
+}
+
+body {
+  background-color: var(--mint-green);
+}
+.navbar {
+  background-color: var(--dark-brown);
+}
+
+.navbar-text {
+  color: var(--mint-green);
+}
+
+.card-color {
+  background-color: var(--mint-green);
+}
+
+.card {
+  border: 5px solid var(--dark-brown);
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.bg-brown {
+  background-color: var(--dark-brown);
+}

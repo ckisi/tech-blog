@@ -46,7 +46,7 @@ const updatePost = async (postId) => {
   }
 };
 
-// TODO: delete a post
+// deletes a post
 const deletePost = async (postId) => {
   const response = await fetch(`api/posts/${postId}`, {
     method: "DELETE",
